@@ -49,6 +49,9 @@ class Status:
         self._wan_ipv4_addr: ipaddress.IPv4Address | None = None
         self._lan_ipv4_addr: ipaddress.IPv4Address | None = None
         self._wan_ipv4_gateway: ipaddress.IPv4Address | None = None
+        self._lte_connection_status: str = ''
+        self._pppoe_connection_status: str = ''
+        self.pppoe_connection_enabled: bool
         self.wired_total: int = 0
         self.wifi_clients_total: int = 0
         self.guest_clients_total: int = 0
@@ -103,6 +106,14 @@ class Status:
     @property
     def wan_ipv4_gateway(self) -> str | None:
         return str(self._wan_ipv4_gateway) if self._wan_ipv4_gateway else None
+    
+    @property
+    def lte_connection_status(self) -> str | None:
+        return str(self._lte_connection_status) if self._lte_connection_status else None
+    
+    @property
+    def pppoe_connection_status(self) -> str | None:
+        return str(self._pppoe_connection_status) if self._pppoe_connection_status else None      
 
     @property
     def wan_ipv4_gateway_address(self) -> ipaddress.IPv4Address | None:

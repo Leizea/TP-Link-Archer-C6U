@@ -826,8 +826,7 @@ class TPLinkMRClient(AbstractRouter):
         status = Status()
         acts = [
             self.ActItem(self.ActItem.GS, 'LAN_IP_INTF', attrs=['X_TP_MACAddress', 'IPInterfaceIPAddress']),
-            self.ActItem(self.ActItem.GS, 'WAN_IP_CONN',
-                         attrs=['enable', 'MACAddress', 'externalIPAddress', 'defaultGateway']),
+            self.ActItem(self.ActItem.GS, 'WAN_IP_CONN', attrs=['enable', 'name', 'connectionStatus', 'MACAddress', 'externalIPAddress', 'defaultGateway']),
             self.ActItem(self.ActItem.GL, 'LAN_WLAN', attrs=['enable', 'X_TP_Band']),
             self.ActItem(self.ActItem.GL, 'LAN_WLAN_GUESTNET', attrs=['enable', 'name']),
             self.ActItem(self.ActItem.GL, 'LAN_HOST_ENTRY', attrs=[
@@ -842,6 +841,7 @@ class TPLinkMRClient(AbstractRouter):
                 'X_TP_TotalPacketsSent',
                 'X_TP_TotalPacketsReceived',
             ]),
+            self.ActItem(self.ActItem.GL, 'WAN_PPP_CONN', attrs=['enable', 'name', 'lastConnectionError', 'connectionStatus']),
         ]
         _, values = self.req_act(acts)
 
@@ -854,9 +854,11 @@ class TPLinkMRClient(AbstractRouter):
         for item in self._to_list(values.get('1')):
             if int(item['enable']) == 0 and values.get('1').__class__ == list:
                 continue
+            status._wan_ipv4_gateway = ipaddress.IPv4Address(item['defaultGateway'])
             status._wan_macaddr = macaddress.EUI48(item['MACAddress']) if item.get('MACAddress') else None
             status._wan_ipv4_addr = ipaddress.IPv4Address(item['externalIPAddress'])
             status._wan_ipv4_gateway = ipaddress.IPv4Address(item['defaultGateway'])
+            status._lte_connection_status = str(item['connectionStatus'])
 
         if values['2'].__class__ != list:
             status.wifi_2g_enable = bool(int(values['2']['enable']))
@@ -901,6 +903,10 @@ class TPLinkMRClient(AbstractRouter):
 
         status.devices = list(devices.values())
         status.clients_total = status.wired_total + status.wifi_clients_total + status.guest_clients_total
+
+        for item in self._to_list(values.get('6')):
+            status._pppoe_connection_status = str(item['connectionStatus'])
+            status.pppoe_connection_enabled = bool(int(values['6']['enable']))
 
         return status
 
