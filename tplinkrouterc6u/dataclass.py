@@ -113,7 +113,11 @@ class Status:
     
     @property
     def pppoe_connection_status(self) -> str | None:
-        return str(self._pppoe_connection_status) if self._pppoe_connection_status else None      
+        return str(self._pppoe_connection_status) if self._pppoe_connection_status else None
+
+    @property
+    def pppoe_connection_enabled(self) -> bool | None:
+        return True if self._pppoe_connection_status == 'Connected' else False
 
     @property
     def wan_ipv4_gateway_address(self) -> ipaddress.IPv4Address | None:

@@ -906,7 +906,7 @@ class TPLinkMRClient(AbstractRouter):
 
         for item in self._to_list(values.get('6')):
             status._pppoe_connection_status = str(item['connectionStatus'])
-            status.pppoe_connection_enabled = bool(int(values['6']['enable']))
+            # status.pppoe_connection_enabled = bool(int(values['6']['enable']))
 
         return status
 
