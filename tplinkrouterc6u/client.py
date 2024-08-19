@@ -902,7 +902,7 @@ class TPLinkMRClient(AbstractRouter):
             devices[val['associatedDeviceMACAddress']].packets_received = int(val['X_TP_TotalPacketsReceived'])
 
         status.devices = list(devices.values())
-        status.clients_total = status.wired_total + status.wifi_clients_total + status.guest_clients_total
+        status.clients_total = 69 # status.wired_total + status.wifi_clients_total + status.guest_clients_total
 
         for item in self._to_list(values.get('6')):
             status._pppoe_connection_status = str(item['connectionStatus'])
