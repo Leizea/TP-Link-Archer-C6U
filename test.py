@@ -4,8 +4,8 @@ logging.basicConfig(level=logging.DEBUG, format="%(asctime)s %(levelname)-8s %(m
 import macaddress
 import ipaddress
 from typing import TypeAlias
-from tplinkrouterc6u import Connection, TplinkRouterProvider
-from tplinkrouterc6u.dataclass import Status, Device
+from tplinkroutermr600 import Connection, TplinkRouterProvider
+from tplinkroutermr600.dataclass import Status, Device
 from mac_vendor_lookup import MacLookup, BaseMacLookup
 import pprint
 import json

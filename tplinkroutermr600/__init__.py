@@ -1,4 +1,4 @@
-from tplinkrouterc6u.client import (
+from tplinkroutermr600.client import (
     TplinkRouter,
     TplinkRouterProvider,
     TplinkC1200Router,
@@ -6,8 +6,8 @@ from tplinkrouterc6u.client import (
     AbstractRouter,
     TPLinkDecoClient,
 )
-from tplinkrouterc6u.enum import Connection
-from tplinkrouterc6u.dataclass import (
+from tplinkroutermr600.enum import Connection
+from tplinkroutermr600.dataclass import (
     Firmware,
     Status,
     Device,
@@ -15,4 +15,4 @@ from tplinkrouterc6u.dataclass import (
     IPv4DHCPLease,
     IPv4Status,
 )
-from tplinkrouterc6u.exception import ClientException
+from tplinkroutermr600.exception import ClientException

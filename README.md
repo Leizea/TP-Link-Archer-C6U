@@ -1,12 +1,12 @@
 # TP-Link Router API
 Python package for API access and management for TP-Link Routers. See [Supported routers](#supports)
 
-[![Pypi](https://img.shields.io/pypi/v/tplinkrouterc6u)](https://pypi.org/project/tplinkrouterc6u/)
-[![Downloads](https://static.pepy.tech/personalized-badge/tplinkrouterc6u?period=total&units=international_system&left_color=grey&right_color=orange&left_text=Downloads)](https://pypi.org/project/tplinkrouterc6u/)
-![Python versions](https://img.shields.io/pypi/pyversions/tplinkrouterc6u)
+[![Pypi](https://img.shields.io/pypi/v/tplinkroutermr600)](https://pypi.org/project/tplinkroutermr600/)
+[![Downloads](https://static.pepy.tech/personalized-badge/tplinkroutermr600?period=total&units=international_system&left_color=grey&right_color=orange&left_text=Downloads)](https://pypi.org/project/tplinkroutermr600/)
+![Python versions](https://img.shields.io/pypi/pyversions/tplinkroutermr600)
 
 ## Installation
-`pip install tplinkrouterc6u`
+`pip install tplinkroutermr600`
 
 ## Dependencies
  - [requests](https://pypi.org/project/requests/)
@@ -16,7 +16,7 @@ Python package for API access and management for TP-Link Routers. See [Supported
 Enter the host & credentials used to log in to your router management page. Username is admin by default. But you may pass username as third parameter
 
 ```python
-from tplinkrouterc6u import (
+from tplinkroutermr600 import (
     TplinkRouterProvider,
     TplinkRouter,
     TplinkC1200Router,

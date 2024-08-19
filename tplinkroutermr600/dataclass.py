@@ -1,7 +1,7 @@
 import macaddress
 import ipaddress
 from dataclasses import dataclass, field
-from tplinkrouterc6u.enum import Connection
+from tplinkroutermr600.enum import Connection
 
 
 @dataclass

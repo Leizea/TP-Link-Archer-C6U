@@ -1,7 +1,7 @@
 import unittest
 import macaddress
 import ipaddress
-from tplinkrouterc6u import (
+from tplinkroutermr600 import (
     TPLinkMRClient,
     Connection,
     Firmware,

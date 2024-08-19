@@ -2,7 +2,7 @@ import unittest
 import json
 import macaddress
 import ipaddress
-from tplinkrouterc6u import (
+from tplinkroutermr600 import (
     TPLinkDecoClient,
     Connection,
     Firmware,

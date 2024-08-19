@@ -19,7 +19,7 @@ jobs:
           python -m pip install --upgrade pip
       - name: Install package
         run: |
-          pip install tplinkrouterc6u
+          pip install tplinkroutermr600
       - name: Install dependencies
         run: |
           pip install -r requirements.txt

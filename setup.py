@@ -4,10 +4,10 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="tplinkrouterc6u",
+    name="tplinkroutermr600",
     version="4.1.3",
-    author="Alex Erohin",
-    author_email="alexanderErohin@yandex.ru",
+    author="Asier Leizea",
+    author_email="1441405+Leizea@users.noreply.github.com",
     description="TP-Link Router API",
     long_description=long_description,
     long_description_content_type="text/markdown",

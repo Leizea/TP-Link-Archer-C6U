@@ -9,10 +9,10 @@ import datetime
 import macaddress
 import ipaddress
 from logging import Logger
-from tplinkrouterc6u.encryption import EncryptionWrapper, EncryptionWrapperMR
-from tplinkrouterc6u.enum import Connection
-from tplinkrouterc6u.dataclass import Firmware, Status, Device, IPv4Reservation, IPv4DHCPLease, IPv4Status
-from tplinkrouterc6u.exception import ClientException, ClientError
+from tplinkroutermr600.encryption import EncryptionWrapper, EncryptionWrapperMR
+from tplinkroutermr600.enum import Connection
+from tplinkroutermr600.dataclass import Firmware, Status, Device, IPv4Reservation, IPv4DHCPLease, IPv4Status
+from tplinkroutermr600.exception import ClientException, ClientError
 from abc import ABC, abstractmethod
 
 
@@ -902,7 +902,7 @@ class TPLinkMRClient(AbstractRouter):
             devices[val['associatedDeviceMACAddress']].packets_received = int(val['X_TP_TotalPacketsReceived'])
 
         status.devices = list(devices.values())
-        status.clients_total = 69 # status.wired_total + status.wifi_clients_total + status.guest_clients_total
+        status.clients_total = status.wired_total + status.wifi_clients_total + status.guest_clients_total
 
         for item in self._to_list(values.get('6')):
             status._pppoe_connection_status = str(item['connectionStatus'])

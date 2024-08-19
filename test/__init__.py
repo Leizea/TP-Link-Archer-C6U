@@ -1,7 +1,7 @@
 import sys
 import unittest
 
-sys.path.append('../tplinkrouterc6u')
+sys.path.append('../tplinkroutermr600')
 
 loader = unittest.TestLoader()
 testSuite = loader.discover('test')
