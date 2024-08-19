@@ -11,7 +11,7 @@ setuptools.setup(
     description="TP-Link Router API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/AlexandrErohin/TP-Link-Archer-C6U",
+    url="https://github.com/Leizea/TP-Link-Archer-C6U",
     packages=setuptools.find_packages(),
     classifiers=[
         "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
