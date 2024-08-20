@@ -44,14 +44,15 @@ class Device:
 @dataclass
 class Status:
     def __init__(self) -> None:
-        self._wan_macaddr: macaddress.EUI48 | None = None
         self._lan_macaddr: macaddress
-        self._wan_ipv4_addr: ipaddress.IPv4Address | None = None
         self._lan_ipv4_addr: ipaddress.IPv4Address | None = None
+        self._lte_connection_status: bool
+        self._pppoe_connection_status: bool
+        self._wan_ipv4_addr: ipaddress.IPv4Address | None = None
+        self._wan_macaddr: macaddress.EUI48 | None = None
         self._wan_ipv4_gateway: ipaddress.IPv4Address | None = None
-        self._lte_connection_status: str = ''
-        self._pppoe_connection_status: str = ''
-        self.pppoe_connection_enabled: bool
+        self._wan_connection_type: str = ''
+        self._wan_dns_servers: str = ''
         self.wired_total: int = 0
         self.wifi_clients_total: int = 0
         self.guest_clients_total: int = 0
@@ -108,21 +109,24 @@ class Status:
         return str(self._wan_ipv4_gateway) if self._wan_ipv4_gateway else None
     
     @property
-    def lte_connection_status(self) -> str | None:
-        return str(self._lte_connection_status) if self._lte_connection_status else None
+    def wan_ipv4_gateway_address(self) -> ipaddress.IPv4Address | None:
+        return self._wan_ipv4_gateway    
     
     @property
-    def pppoe_connection_status(self) -> str | None:
-        return str(self._pppoe_connection_status)
+    def lte_connection_status(self):
+        return self._lte_connection_status
+    
+    @property
+    def pppoe_connection_status(self):
+        return self._pppoe_connection_status
 
     @property
-    def pppoe_connection_enabled(self) -> bool | None:
-        return True if self._pppoe_connection_status == 'Connected' else False
+    def wan_connection_type(self) -> str | None:
+        return str(self._wan_connection_type)
 
     @property
-    def wan_ipv4_gateway_address(self) -> ipaddress.IPv4Address | None:
-        return self._wan_ipv4_gateway
-
+    def wan_dns_servers(self) -> str | None:
+        return str(self._wan_dns_servers)
 
 @dataclass
 class IPv4Reservation:

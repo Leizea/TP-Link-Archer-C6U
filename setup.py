@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="tplinkroutermr600",
-    version="4.1.3",
+    version="4.1.4",
     author="Asier Leizea",
     author_email="1441405+Leizea@users.noreply.github.com",
     description="TP-Link Router API",
