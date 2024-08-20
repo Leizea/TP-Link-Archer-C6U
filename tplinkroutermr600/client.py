@@ -653,7 +653,7 @@ class TplinkC6V4Router(AbstractRouter):
             return False
         if response.status_code == 401 and response.text.startswith('00'):
             raise ClientException(
-                'Your router is not supported. Please add your router support to https://github.com/AlexandrErohin/TP-Link-Archer-C6U by implementing methods for TplinkC6V4Router class')
+                'Your router is not supported. Please add your router support to https://github.com/Leizea/TP-Link-Archer-C6U by implementing methods for TplinkC6V4Router class')
         return False
 
     def authorize(self) -> None:

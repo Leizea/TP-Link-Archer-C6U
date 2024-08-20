@@ -46,7 +46,7 @@ assert isinstance(d.macaddress, macaddress.EUI48), "macaddress is not type macad
 assert isinstance(d.ipaddr, str), "Type of ipaddr is not type str"
 assert isinstance(d.ipaddress, ipaddress.IPv4Address), "Type of ipaddress is not ipaddress.IPv4Address"
 
-# Test typing from AlexandrErohin 
+# Test typing from Leizea 
 MAC_ADDR: TypeAlias = str
 tracked: dict[MAC_ADDR, str] = {}
 tracked[d.macaddr] = "This item is tracked"

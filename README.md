@@ -270,7 +270,7 @@ or you have TP-link C1200 V2 or similar router you need to get web encrypted pas
 Please let me know if you have tested integration with one of this or other model. Open an issue with info about router's model, hardware and firmware versions.
 
 ## <a id="add_support">Adding Support For More Models</a>
-Guidelines [CONTRIBUTING.md](https://github.com/AlexandrErohin/TP-Link-Archer-C6U/blob/master/CONTRIBUTING.md)
+Guidelines [CONTRIBUTING.md](https://github.com/Leizea/TP-Link-Archer-C6U/blob/master/CONTRIBUTING.md)
 
 ## Local Development
 
